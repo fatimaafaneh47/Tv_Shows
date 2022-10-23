@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}"> 
+    <title>Document</title>
+</head>
+<body>
+    <div class="link" style="margin-left:23% ;">
+    
+        <a href="/shows">Tv Shows</a> <a href="/">Log Out</a>
+    </div>
+    <div class="showdetails">
+    <h1>{{show.title}}</h1>
+    <p>Network: {{show.network}}</p>
+    <p>Release_Date:{{show.release_date}}</p>
+    <p>Description</p>
+    <p>{{show.desc}}</p>
+    <p>Posted_by {{show.watched_by.first_name}} {{show.watched_by.last_name}}</p>
+</div>
+</body>
+</html>

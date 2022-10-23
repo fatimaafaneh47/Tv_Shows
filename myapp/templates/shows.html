@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+       
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">  
+    
+    <title>Document</title>
+</head>
+<body>
+  <div class="raw">
+    <h1 style="margin-left: 8%; margin-top: 2%;">{{this_user.first_name}} {{this_user.last_name}}</h1>
+    <div style="margin-top: 5%;">
+    <a href="/shows/new">+ create</a> <a href="/">log out</a>
+  </div>
+  </div>
+    <h2 style="margin-left: 27%;">All Tv Shows</h2>
+        <table class="table table-bordered mytable">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Network</th>
+                <th scope="col">Releade Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for show in shows %}
+              <tr>
+                <td>{{show.title}}</td>
+                <td>{{show.network}}</td>
+                <td>{{show.release_date}}</td>
+                {% if this_user == show.watched_by %}
+                <td>
+              <a href="/shows/{{show.id}}">show</a> <a href="shows/edit/{{show.id}}">edit</a> <a href="shows/delete/{{show.id}}">delete</a></td>
+              {% else %}
+              <td><a href="/shows/{{show.id}}">show</a></td>
+             {% endif %}
+
+             
+            </tr>
+            {% endfor %}
+          
+            </tbody>
+          </table>
+</body>
+</html>

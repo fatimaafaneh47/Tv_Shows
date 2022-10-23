@@ -1,0 +1,46 @@
+.mymain{
+    display: flex;
+    justify-content: space-around;
+    
+}
+button{
+    background-color: white;
+}
+.raw{
+    display: flex;
+    justify-content: space-around;
+}
+.mytable{
+    width:40%;
+    height: 10%;
+    border: 2px solid black;
+}
+.form2{
+    margin-left: 20%;
+    
+}
+.table2{
+    width:40%;
+    height: 100px;
+}
+.mymain3{
+    display: flex;
+    justify-content: space-around;
+} 
+.form3{
+    margin-left: 10%;
+    
+}
+.showdetails{
+    border: 2px solid black;
+    width:500px;
+    margin-left: 20%;
+    margin-top: 2%;
+    text-align: left;
+    padding: 10px;
+}
+.mytable{
+    width:800px;
+    
+    margin:auto;
+}

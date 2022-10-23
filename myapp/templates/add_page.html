@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">  
+    <title>Document</title>
+</head>
+<body>
+    <div class="mymain">
+        <div class="mine">
+    <h1>Add a new show</h1>
+    <a href="/shows"> Tv Shows</a> <a href="/">Log Out</a>
+</div>
+<ul class="messages" style="color: red;">
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+</ul>
+    </div>
+    <div class="form2" >
+    <form action="/shows/add" method="POST">
+     {% csrf_token %}
+     <p>Title</p><input type="text" name="title">
+    <p>Network</p><input type="text" name="network">
+     <p>Release Date</p><input type="date" name="releasedate">
+    <p>Description</p>
+    <textarea name="description"  rows="5"></textarea>
+    <br>
+    <br>
+    <button type="submit">Add</button>
+    </form>
+</div>
+</body>
+</html>
